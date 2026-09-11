@@ -23,4 +23,16 @@ void main() {
     {
         System.out.println("У прямоугольника со сторонами:" + restangleS.width + " и " + restangleS.height + " площадь больше");
     }
+   // 3)
+    BankAccount client = new BankAccount("Charli", 1500.5);
+    client.printInfo();
+
+    client.deposit(500);
+    client.printInfo();
+
+    client.withdraw(300);
+    client.printInfo();
+
+    client.withdraw(5000);
+    client.printInfo();
 }
