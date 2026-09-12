@@ -1,6 +1,6 @@
 public class Restengle extends Shape {
-    double width;
-    double height;
+  private double width;
+  private double height;
   public Restengle(char type, double width, double height)
   {
       super(type);

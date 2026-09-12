@@ -49,31 +49,83 @@ void main() {
     System.out.println("Speed: " + car.getSpeed());
     car.setSpeed(145);
     System.out.println("Speed: " + car.getSpeed());
-    //8.4
-//     Scanner scanner = new Scanner(System.in);
-//    System.out.println("Введите количество фигур: ");
-//    int n = scanner.nextInt();
-//    Shape[] shapes = new Shape[n];
-//    for(int i = 0; i < n; i++)
-//    {
-//        System.out.print("Введите тип фигуры ('C' — круг, 'R' — прямоугольник): ");
-//        char type = scanner.next().charAt(0);
-//        switch (type) {
-//            case 'C':
-//                System.out.println("Введите радиус круга:");
-//                double radios = scanner.nextInt();
-//                shapes[i] = new Circle(type, radios);
-//                break;
-//            case 'R':
-//                System.out.println("Введите width прямоугольника:");
-//                double width = scanner.nextInt();
-//                System.out.println("Введите height прямоугольника:");
-//                double height = scanner.nextInt();
-//                shapes[i] = new Restengle(type, width, height);
-//                break;
-//            default:
-//                System.out.println("ввод фигуры неверный!");
-//                i--;  Ещё не готово
 
-
+    //8.3
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Введите количество сотрудников: ");
+    int n = scanner.nextInt();
+    scanner.nextLine();
+    Employee[] employee = new Employee[n];
+    double sum = 0;
+    for(int i = 0; i < n; i++) {
+        System.out.println("Введите имя:");
+        String name = scanner.nextLine();
+        System.out.println("Введите базовую зарплату:");
+        double baseSalary = scanner.nextDouble();
+        scanner.nextLine();
+        System.out.print("Введите 'M' или 'D': ");
+        char type = scanner.next().charAt(0);
+        scanner.nextLine();
+        switch (type) {
+            case 'M':
+                employee[i] = new Manager(name, baseSalary);
+                break;
+            case 'D':
+                employee[i] = new Developer(name, baseSalary);
+                break;
+            default:
+                System.out.println("ввод должности неверный!");
+                i--;
+        }
+    }
+    for(int i = 0; i < employee.length; i++) {
+        System.out.println(employee[i].getName() +" : " + employee[i].calculatePay());
+        sum += employee[i].calculatePay();
+    }
+    System.out.println("Общая сумма выплат: " + sum);
+    scanner.close();
 }
+
+//    //8.4
+     Scanner scanner = new Scanner(System.in);
+    System.out.println("Введите количество фигур: ");
+    int n = scanner.nextInt();
+    Shape[] shapes = new Shape[n];
+    for(int i = 0; i < n; i++) {
+        System.out.print("Введите тип фигуры ('C' — круг, 'R' — прямоугольник): ");
+        char type = scanner.next().charAt(0);
+        switch (type) {
+            case 'C':
+                System.out.println("Введите радиус круга:");
+                double radius = scanner.nextDouble();
+                shapes[i] = new Circle(type, radius);
+                break;
+            case 'R':
+                System.out.println("Введите width прямоугольника:");
+                double width = scanner.nextDouble();
+                System.out.println("Введите height прямоугольника:");
+                double height = scanner.nextDouble();
+                shapes[i] = new Restengle(type, width, height);
+                break;
+            default:
+                System.out.println("ввод фигуры неверный!");
+                i--;
+        }
+    }
+    for(int i = 0; i < shapes.length; i++)
+    {
+        System.out.println("Площадь фигуры:"+ shapes[i].area() +" тип фигуры: "+shapes[i].getType());
+    }
+    double areaM = shapes[0].area();
+    char areaI = shapes[0].getType();
+    for(int i = 1; i < shapes.length; i++) {
+       if(shapes[i].area() > areaM)
+       {
+           areaM = shapes[i].area();
+           areaI = shapes[i].getType();
+       }
+    }
+    System.out.println("Площадь фигуры с максимальной площадью:" + areaM + " тип фигуры: " + areaI);
+    scanner.close();
+
+
