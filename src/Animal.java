@@ -1,4 +1,4 @@
-public class Animal {
+public abstract class Animal {
     private String name;
     public Animal(String name) {
         this.name = name;
@@ -7,8 +7,9 @@ public class Animal {
     public String getName() {
         return name;
     }
-    void makeSound()
+    public abstract void makeSound();
+    void sleep()
     {
-        System.out.println("Животное издаёт звук");
+        System.out.println("Спит");
     }
 }

@@ -1,4 +1,4 @@
-public class Employee {
+public abstract class Employee implements Payable {
     private String name;
     private double baseSalary;
     public Employee(String name, double baseSalary) {
@@ -12,8 +12,11 @@ public class Employee {
     public double getBaseSalary() {
         return baseSalary;
     }
-    double calculatePay()
-    {
-        return baseSalary;
+    public abstract double getBonus();
+
+    @Override
+    public double calculatePay() {
+        return baseSalary + getBonus();
     }
 }
+
