@@ -128,42 +128,72 @@ void main() {
 //    System.out.println("Площадь фигуры с максимальной площадью:" + areaM + " тип фигуры: " + areaI);
 //    scanner.close();
     //9.1
-    Scanner scanner = new Scanner(System.in);
-//    Person[] persons = new Person[4];
-//    for (int i = 0; i < persons.length; i++) {
-//        System.out.println("Введите Name:");
-//        String name = scanner.nextLine();
-//        System.out.println("Введите Age:");
-//        int age = scanner.nextInt();
-//        scanner.nextLine();
-//        System.out.print("Введите 'P' || 'S': ");
-//        char type = scanner.next().charAt(0);
-//        scanner.nextLine();
-//        switch (type) {
-//            case 'P':
-//                persons[i] =new Person(name, age);
-//                break;
-//            case 'S':
-//                System.out.println("Введите Grade:");
-//                double grade = scanner.nextDouble();
-//                persons[i] =new Student(name, age, grade);
-//                break;
-//            default:
-//                System.out.println("ввод неверный!");
-//                persons[i] =new Person(name, age);
-//        }
-//    }
-//    for(Person person: persons)
-//    {
-//        person.displayInfo();
-//    }
-//
+   Scanner scanner = new Scanner(System.in);
+    Person[] persons = new Person[4];
+    for (int i = 0; i < persons.length; i++) {
+        System.out.println("Введите Name:");
+        String name = scanner.nextLine();
+        System.out.println("Введите Age:");
+        int age = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Введите 'P' || 'S': ");
+        char type = scanner.next().charAt(0);
+        scanner.nextLine();
+        switch (type) {
+            case 'P':
+                persons[i] =new Person(name, age);
+                break;
+            case 'S':
+                System.out.println("Введите Grade:");
+                double grade = scanner.nextDouble();
+                persons[i] =new Student(name, age, grade);
+                break;
+            default:
+                System.out.println("ввод неверный!");
+                persons[i] =new Person(name, age);
+        }
+    }
+    for(Person person: persons)
+    {
+        person.displayInfo();
+    }
+
 //    //9.2
-//    BankAccount[] accounts = {new BankAccount("Owner1", 100.50), new CheckingAccount("Owner2",5000, 500), new SavingsAccount("Owner3", 600, 1.2)};
-//    for(BankAccount account: accounts)
-//    {
-//        account.calculateYearlyReport();
-//    }
+    BankAccount[] accounts = {new BankAccount("Owner1", 100.50), new CheckingAccount("Owner2",5000, 500), new SavingsAccount("Owner3", 600, 12)};
+    for(BankAccount account: accounts)
+    {
+        account.printInfo();
+        System.out.println("итоговый прогноз баланса: " + account.calculateYearlyReport());
+    }
+    //9.3
+    System.out.println("Введите количество фигур: ");
+    int n = scanner.nextInt();
+    ShapeC[] shapes = new ShapeC[n];
+    for(int i = 0; i < n; i++) {
+        System.out.print("Введите тип фигуры ('C' — круг, 'R' — прямоугольник): ");
+        char type = scanner.next().charAt(0);
+        switch (type) {
+            case 'C':
+                System.out.println("Введите радиус круга:");
+                double radius = scanner.nextDouble();
+                shapes[i] = new Circle("Circle", radius);
+                break;
+            case 'R':
+                System.out.println("Введите width прямоугольника:");
+                double width = scanner.nextDouble();
+                System.out.println("Введите height прямоугольника:");
+                double height = scanner.nextDouble();
+                shapes[i] = new Rectanglle("Rectangle",width, height);
+                break;
+            default:
+                System.out.println("ввод фигуры неверный!");
+                i--;
+        }
+    }
+    for(int i = 0; i < shapes.length; i++)
+    {
+        shapes[i].describe();
+    }
     //10.1
 //    Animal[] animals = {new Dog("Fox"), new Cat("Kiti"), new Dog("Tosha"), new Cat("Tina")};
 //    for(Animal animal: animals)
@@ -214,14 +244,15 @@ void main() {
 
     //11.1
 
-    Temperature temperature = new Temperature(-300);
-    System.out.println(temperature);
-    Temperature temperature1 = new Temperature(25);
-    System.out.println(temperature1.toFahrenheit());
-
-    //11.2
-    Shape s = new Rectangle(3,4);
-    System.out.println(s.area());
+//    Temperature temperature = new Temperature(-300);
+//    System.out.println(temperature);
+//    Temperature temperature1 = new Temperature(25);
+//    System.out.println(temperature1.toFahrenheit());
+//
+//    //11.2
+//    Shape s = new Rectangle(3,4);
+//    System.out.println(s.area());
+//    System.out.println(s.perimeter());
 
 }
 
