@@ -1,17 +1,20 @@
-public class Rectangle {
-    double width;
-    double height;
-    public Rectangle(double width, double height)
-    {
-        this.width = width;
-        this.height = height;
+public record Rectangle(double width, double height) implements Shape
+{
+    public Rectangle {
+       if (width <= 0 || height <= 0) throw new IllegalArgumentException();
     }
-    public double getArea()
-    {
+    @Override
+    public double area() {
         return width * height;
     }
-    public double getPerimeter()
-    {
+
+    @Override
+    public double perimeter() {
         return 2 * (width + height);
+    }
+
+
+    public static Rectangle square(double side) {
+        return new Rectangle(side, side);
     }
 }

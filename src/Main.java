@@ -165,52 +165,64 @@ void main() {
 //        account.calculateYearlyReport();
 //    }
     //10.1
-    Animal[] animals = {new Dog("Fox"), new Cat("Kiti"), new Dog("Tosha"), new Cat("Tina")};
-    for(Animal animal: animals)
-    {
-        animal.makeSound();
-        animal.sleep();
-    }
-    //10.2
-    Drawable[] drawables = {new Circle(9.3), new TextLabel("Kiti"), new Circle(2.3), new TextLabel("Этот текст")};
-    for(Drawable drawable: drawables)
-    {
-        drawable.draw();
-    }
-    //10.3
-//    System.out.println("Введите количество сотрудников: ");
-//    int n = scanner.nextInt();
-//    scanner.nextLine();
-//    Payable[] employee = new Payable[n];
-//    double sum = 0;
-//    for(int i = 0; i < n; i++) {
-//        System.out.println("Введите имя:");
-//        String name = scanner.nextLine();
-//        System.out.println("Введите базовую зарплату:");
-//        double baseSalary = scanner.nextDouble();
-//        scanner.nextLine();
-//        System.out.print("Введите 'M' или 'D': ");
-//        char type = scanner.next().charAt(0);
-//        scanner.nextLine();
-//        switch (type) {
-//            case 'M':
-//                employee[i] = new Manager(name, baseSalary);
-//                break;
-//            case 'D':
-//                employee[i] = new Developer(name, baseSalary);
-//                break;
-//            default:
-//                System.out.println("ввод должности неверный!");
-//                i--;
-//        }
+//    Animal[] animals = {new Dog("Fox"), new Cat("Kiti"), new Dog("Tosha"), new Cat("Tina")};
+//    for(Animal animal: animals)
+//    {
+//        animal.makeSound();
+//        animal.sleep();
 //    }
-//    for(int i = 0; i < employee.length; i++) {
-//        System.out.println(employee[i].getName() +" : " + employee[i].calculatePay());
-//        sum += employee[i].calculatePay();
+//    //10.2
+//    Drawable[] drawables = {new Circle(9.3), new TextLabel("Kiti"), new Circle(2.3), new TextLabel("Этот текст")};
+//    for(Drawable drawable: drawables)
+//    {
+//        drawable.draw();
 //    }
-//
-//    System.out.println("Общая сумма выплат: " + sum);
-    scanner.close();
+//    //10.3
+////    System.out.println("Введите количество сотрудников: ");
+////    int n = scanner.nextInt();
+////    scanner.nextLine();
+////    Payable[] employee = new Payable[n];
+////    double sum = 0;
+////    for(int i = 0; i < n; i++) {
+////        System.out.println("Введите имя:");
+////        String name = scanner.nextLine();
+////        System.out.println("Введите базовую зарплату:");
+////        double baseSalary = scanner.nextDouble();
+////        scanner.nextLine();
+////        System.out.print("Введите 'M' или 'D': ");
+////        char type = scanner.next().charAt(0);
+////        scanner.nextLine();
+////        switch (type) {
+////            case 'M':
+////                employee[i] = new Manager(name, baseSalary);
+////                break;
+////            case 'D':
+////                employee[i] = new Developer(name, baseSalary);
+////                break;
+////            default:
+////                System.out.println("ввод должности неверный!");
+////                i--;
+////        }
+////    }
+////    for(int i = 0; i < employee.length; i++) {
+////        System.out.println(employee[i].getName() +" : " + employee[i].calculatePay());
+////        sum += employee[i].calculatePay();
+////    }
+////
+////    System.out.println("Общая сумма выплат: " + sum);
+//    scanner.close();
+
+    //11.1
+
+    Temperature temperature = new Temperature(-300);
+    System.out.println(temperature);
+    Temperature temperature1 = new Temperature(25);
+    System.out.println(temperature1.toFahrenheit());
+
+    //11.2
+    Shape s = new Rectangle(3,4);
+    System.out.println(s.area());
+
 }
 
 
