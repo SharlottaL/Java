@@ -1,4 +1,4 @@
 package org.example;
 
-public record Student(String name, int age, double grade) {
+public record Student(String nameS, int age, double grade) {
 }

@@ -10,7 +10,7 @@ import java.util.List;
 public class Main {
     static void main() {
     //16.1
-        Book book = new Book("Martin Eden", "Jack London", 1909, 368.99);
+        Book book = new Book("Martin Eden", "Jack London", 1909, 3689.99);
     Gson gson = new Gson();
     Gson gsonB = new GsonBuilder()
             .setPrettyPrinting()
@@ -32,7 +32,7 @@ public class Main {
         {
             if(student.grade() > 4.0)
             {
-                System.out.println(student.name());
+                System.out.println(student.nameS());
             }
             sum += student.grade();
         }
